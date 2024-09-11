@@ -21,7 +21,7 @@ const Form: React.FC = () => {
     const [emailError, setEmailError] = useState<boolean>(false);
     const [performanceError, setPerformanceError] = useState<boolean>(false);
 
-    const base_url = 'http://16.171.32.98/';
+    const base_url = 'http://16.171.32.98';
 
     useEffect(() => {
         const fetchOptions = async () => {
