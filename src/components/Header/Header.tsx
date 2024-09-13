@@ -15,6 +15,8 @@ const Header: React.FC = () => {
 
     useEffect(() => {
         console.log("UseEffect")
+        console.log(Cookies)
+        console.log(Cookies.get('is_logged_in'))
         setIsLoggedIn(Cookies.get('is_logged_in') === 'true');
         setUsername(Cookies.get('user') || '')
         console.log("Set")
