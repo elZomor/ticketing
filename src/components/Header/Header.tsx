@@ -14,9 +14,11 @@ const Header: React.FC = () => {
 
     useEffect(() => {
         // Function to read cookies
-        const getCookie = (name: string): string | null => {
-            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
-            return match ? decodeURIComponent(match[2]) : null;
+        const getCookie = (name: string) => {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts === undefined) return;
+            if (parts?.length === 2) return parts.pop().split(';').shift();
         };
 
 
