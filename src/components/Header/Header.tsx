@@ -14,6 +14,7 @@ const Header: React.FC = () => {
     };
 
     useEffect(() => {
+        Cookies.set('test_cookie', 'test_value', { expires: 100 });
         console.log("UseEffect")
         console.log(Cookies.get())
         console.log(Cookies.get('is_logged_in'))
