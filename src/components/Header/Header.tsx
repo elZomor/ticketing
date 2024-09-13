@@ -1,38 +1,18 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import './header.css';
-import {BASE_URL} from "../../constants.ts";
-import Cookies from 'js-cookie';
+import {SignedIn, SignedOut, SignInButton, UserButton} from "@clerk/clerk-react";
+
 
 const Header: React.FC = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(true);
-    const [username, setUsername] = useState('');
-    const handleLogin = () => {
-        window.location.href = `${BASE_URL}/accounts/google/login/`;
-    };
-    const handleLogout = () => {
-        window.location.href = `${BASE_URL}/auth/logout`;
-    };
-
-    useEffect(() => {
-        Cookies.set('test_cookie', 'test_value', { expires: 100 });
-        console.log("UseEffect")
-        console.log(Cookies.get())
-        console.log(Cookies.get('is_logged_in'))
-        setIsLoggedIn(Cookies.get('is_logged_in') === 'true');
-        setUsername(Cookies.get('user') || '')
-        console.log("Set")
-    }, []);
     return <header className="header">
         <div className="header-content">
             <h2 className="header-title">Welcome to EG-Theater</h2>
-            {isLoggedIn ? (
-                <div className="logged-in-container">
-                    <p>Welcome, {username}</p>
-                    <button onClick={handleLogout} className="logout-button">Logout</button>
-                </div>
-            ) : (
-                <button onClick={handleLogin} className="login-button">Login with Google</button>
-            )}
+            <SignedOut>
+                <SignInButton/>
+            </SignedOut>
+            <SignedIn>
+                <UserButton/>
+            </SignedIn>
         </div>
     </header>
 }
