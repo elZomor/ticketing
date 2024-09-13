@@ -4,7 +4,7 @@ import {BASE_URL} from "../../constants.ts";
 import Cookies from 'js-cookie';
 
 const Header: React.FC = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [username, setUsername] = useState('');
     const handleLogin = () => {
         window.location.href = `${BASE_URL}/accounts/google/login/`;
@@ -17,6 +17,7 @@ const Header: React.FC = () => {
         console.log("UseEffect")
         setIsLoggedIn(Cookies.get('is_logged_in') === 'true');
         setUsername(Cookies.get('user') || '')
+        console.log("Set")
     }, []);
     return <header className="header">
         <div className="header-content">
