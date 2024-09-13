@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './header.css';
 import {BASE_URL} from "../../constants.ts";
+import Cookies from 'js-cookie';
 
 const Header: React.FC = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,21 +14,8 @@ const Header: React.FC = () => {
     };
 
     useEffect(() => {
-        // Function to read cookies
-        const getCookie = (name: string) => {
-            const value = `; ${document.cookie}`;
-            const parts = value.split(`; ${name}=`);
-            if (parts === undefined) return;
-            if (parts?.length === 2) return parts.pop().split(';').shift();
-        };
-
-
-        // Get cookies for is_logged_in and user
-        const loggedIn = getCookie('is_logged_in');
-        const user = getCookie('user');
-        setIsLoggedIn(loggedIn === 'true');
-        setUsername(user || '')
-
+        setIsLoggedIn(Cookies.get('is_logged_in') === 'true');
+        setUsername(Cookies.get('user') || '')
     }, []);
     return <header className="header">
         <div className="header-content">
