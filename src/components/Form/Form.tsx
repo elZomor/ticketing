@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { PerformanceModel } from "../model/PerformanceModel.ts";
 import './form.css';
+import {BASE_URL} from "../../constants.ts";
 
 interface Option {
     value: string;
@@ -21,12 +22,11 @@ const Form: React.FC = () => {
     const [emailError, setEmailError] = useState<boolean>(false);
     const [performanceError, setPerformanceError] = useState<boolean>(false);
 
-    const base_url = 'https://eg-theater.online';
 
     useEffect(() => {
         const fetchOptions = async () => {
             try {
-                const response = await fetch(`${base_url}/tickets/performance`);
+                const response = await fetch(`${BASE_URL}/tickets/performance`);
                 const data: PerformanceModel[] = await response.json();
                 const options: Option[] = [];
                 data.forEach(performance => {
@@ -84,7 +84,7 @@ const Form: React.FC = () => {
         setSubmitStatus(''); // Reset the status message before submitting
 
         try {
-            const response = await fetch(`${base_url}/tickets/reservation`, {
+            const response = await fetch(`${BASE_URL}/tickets/reservation`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
