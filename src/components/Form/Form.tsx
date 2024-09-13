@@ -20,7 +20,7 @@ const Form: React.FC = () => {
     // New state for showing mandatory field errors
     const [nameError, setNameError] = useState<boolean>(false);
     const [emailError, setEmailError] = useState<boolean>(false);
-    const [performanceError, setPerformanceError] = useState<boolean>(false);
+    const [performanceError, setPerformanceError] = useState<boolean>(false;
 
 
     useEffect(() => {
