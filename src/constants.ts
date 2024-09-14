@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://api.eg-theater.online';
+export const BASE_URL = import.meta.env.BASE_URL;
