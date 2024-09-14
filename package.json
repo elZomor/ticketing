@@ -7,11 +7,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prettier:format": "prettier --write 'src/**/*.{ts,html,js,json}' '*.ts' '*.html' '*.js' '*.json'",
+    "prettier:check": "prettier --check 'src/**/*.{ts,html,js,json}' '*.ts' '*.html' '*.js' '*.json'"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.8.2",
     "js-cookie": "^3.0.5",
+    "prettier": "^3.3.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
