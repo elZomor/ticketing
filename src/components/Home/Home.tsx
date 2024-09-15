@@ -1,12 +1,15 @@
 import seats12 from '../../assets/images/seats12.avif';
-import { useClerk, SignedOut } from '@clerk/clerk-react';
+import { useClerk, SignedOut, SignedIn } from '@clerk/clerk-react';
 import { useTranslation } from 'react-i18next';
 
 export default function Home() {
   const clerk = useClerk();
   const { t } = useTranslation();
-  const handleClick = () => {
+  const handleLogin = () => {
     clerk.openSignIn();
+  };
+  const handleLogout = async () => {
+    await clerk.signOut();
   };
 
   return (
@@ -23,12 +26,20 @@ export default function Home() {
           </p>
           <SignedOut>
             <button
-              onClick={handleClick}
+              onClick={handleLogin}
               className="mt-8 text-white uppercase py-4 text-base font-light px-10 border border-white hover:bg-white hover:bg-opacity-10"
             >
               {t('LOGIN')}
             </button>
           </SignedOut>
+          <SignedIn>
+            <button
+              onClick={handleLogout}
+              className="mt-8 text-white uppercase py-4 text-base font-light px-10 border border-white hover:bg-white hover:bg-opacity-10"
+            >
+              {t('LOGOUT')}
+            </button>
+          </SignedIn>
           <button
             className="mt-8 text-white uppercase py-4 text-base font-light px-10 border border-white hover:bg-white hover:bg-opacity-10 mx-3">
             {t('SHOWS')}
