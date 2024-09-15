@@ -18,7 +18,11 @@ function Root() {
   const localization = i18n.language === 'ar' ? arSA : enUS; // Expand this based on supported languages
 
   return (
-    <ClerkProvider localization={localization} publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <ClerkProvider
+      localization={localization}
+      publishableKey={PUBLISHABLE_KEY}
+      afterSignOutUrl="/"
+    >
       <App />
     </ClerkProvider>
   );
@@ -27,5 +31,5 @@ function Root() {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Root />
-  </StrictMode>,
+  </StrictMode>
 );
