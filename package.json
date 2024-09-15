@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "prettier:format": "prettier --write 'src/**/*.{ts,html,js,json}' '*.ts' '*.html' '*.js' '*.json'",
-    "prettier:check": "prettier --check 'src/**/*.{ts,html,js,json}' '*.ts' '*.html' '*.js' '*.json'",
+    "prettier:format": "prettier --write 'src/**/*.{ts,tsx,html,js,json}' '*.ts' '*.html' '*.js' '*.json'",
+    "prettier:check": "prettier --check 'src/**/*.{ts,tsx,html,js,json}' '*.ts' '*.html' '*.js' '*.json'",
     "eslint:check": "eslint --no-fix",
     "eslint": "eslint ./src/ --fix"
   },
@@ -36,9 +36,5 @@
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1"
-  },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "eslint.config.js",
-  "author": "",
-  "license": "ISC"
+  }
 }
