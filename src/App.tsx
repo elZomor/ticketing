@@ -1,13 +1,13 @@
-import Form from "./components/Form/Form.tsx";
+
 import "./App.css";
-import Header from "./components/Header/Header.tsx";
+import Home from "./components/Home/home";
+
 
 function App() {
 
     return (
         <>
-            <Header></Header>
-            <Form></Form>
+   <Home></Home>
         </>
     )
 }
