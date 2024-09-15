@@ -4,12 +4,16 @@ import { useTranslation } from 'react-i18next';
 
 export default function Home() {
   const clerk = useClerk();
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const handleLogin = () => {
     clerk.openSignIn();
   };
   const handleLogout = async () => {
     await clerk.signOut();
+  };
+  const handleLanguageChange = async () => {
+    const currentLanguage = i18n.language;
+    await i18n.changeLanguage(currentLanguage === 'en' ? 'ar' : 'en');
   };
 
   return (
@@ -43,6 +47,11 @@ export default function Home() {
           <button
             className="mt-8 text-white uppercase py-4 text-base font-light px-10 border border-white hover:bg-white hover:bg-opacity-10 mx-3">
             {t('SHOWS')}
+          </button>
+          <button
+            onClick={handleLanguageChange}
+            className="mt-8 text-white uppercase py-4 text-base font-light px-10 border border-white hover:bg-white hover:bg-opacity-10 mx-3">
+            {t('OTHER_LANGUAGE')}
           </button>
         </div>
       </div>
