@@ -1,15 +1,12 @@
-import Form from "./components/Form/Form.tsx";
-import "./App.css";
-import Header from "./components/Header/Header.tsx";
+import './App.css';
+import Home from './components/Home/Home';
 
 function App() {
-
-    return (
-        <>
-            <Header></Header>
-            <Form></Form>
-        </>
-    )
+  return (
+    <>
+      <Home></Home>
+    </>
+  );
 }
 
-export default App
+export default App;
