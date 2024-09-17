@@ -1,10 +1,12 @@
 import './App.css';
 import Home from './components/Home/Home';
+import Header from './components/header/Header.tsx';
 
 function App() {
   return (
     <>
-      <Home></Home>
+      <Header />
+      <Home />
     </>
   );
 }
