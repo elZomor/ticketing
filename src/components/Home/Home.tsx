@@ -8,26 +8,35 @@ export default function Home() {
 
   return (
     <div className="w-screen h-screen overflow-hidden relative before:block before:absolute before:bg-black before:h-full before:w-full before:top-0 before:left-0 before:z-10 before:opacity-30">
-      <img src={seats12} className="absolute top-0 left-0  w-full" alt="" />
-      <div className="relative z-20 max-w-screen-lg mx-auto grid grid-cols-12 h-full items-center">
-        <div className="col-span-6">
-          <h1 className="text-white font-extrabold text-5xl mb-8">
+      <img
+        src={seats12}
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        alt=""
+      />
+
+      <div className="relative z-20 max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-12 h-full items-center">
+        <div className="col-span-12 md:col-span-6 text-center md:text-left">
+          <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-8">
             {t('EG Theater')}
           </h1>
-          <p className="text-stone-100 text-base font-bold italic">
+
+          <p className="text-stone-100 text-sm sm:text-base font-bold italic">
             {t('SLOGAN')}
           </p>
-          <SignedOut>
-            <button
-              onClick={() => clerk.openSignIn()}
-              className="mt-8 text-white uppercase py-4 text-base font-light px-10 border border-white hover:bg-white hover:bg-opacity-10"
-            >
-              {t('LOGIN')}
+
+          <div className="mt-6 sm:mt-8">
+            <SignedOut>
+              <button
+                onClick={() => clerk.openSignIn()}
+                className="w-full md:w-auto mt-4 md:mt-0 text-white uppercase py-3 text-sm sm:text-base font-light px-8 border border-white hover:bg-white hover:bg-opacity-10"
+              >
+                {t('LOGIN')}
+              </button>
+            </SignedOut>
+            <button className="w-full md:w-auto mt-4 md:mt-0 text-white uppercase py-3 text-sm sm:text-base font-light px-8 border border-white hover:bg-white hover:bg-opacity-10 mx-0 md:mx-3">
+              {t('SHOWS')}
             </button>
-          </SignedOut>
-          <button className="mt-8 text-white uppercase py-4 text-base font-light px-10 border border-white hover:bg-white hover:bg-opacity-10 mx-3">
-            {t('SHOWS')}
-          </button>
+          </div>
         </div>
       </div>
     </div>
