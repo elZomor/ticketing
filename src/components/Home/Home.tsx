@@ -1,6 +1,7 @@
 import seats12 from '../../assets/images/seats12.avif';
 import { useTranslation } from 'react-i18next';
 import { SignedOut, useClerk } from '@clerk/clerk-react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   const { t } = useTranslation();
@@ -33,9 +34,13 @@ export default function Home() {
                 {t('LOGIN')}
               </button>
             </SignedOut>
-            <button className="w-full md:w-auto mt-4 md:mt-0 text-white uppercase py-3 text-sm sm:text-base font-light px-8 border border-white hover:bg-white hover:bg-opacity-10 mx-0 md:mx-3">
+            <Link
+              to="/shows"
+              id="hide-after-click"
+              className="w-full md:w-auto mt-4 md:mt-0 text-white uppercase py-3 text-sm sm:text-base font-light px-8 border border-white hover:bg-white hover:bg-opacity-10 mx-0 md:mx-3"
+            >
               {t('SHOWS')}
-            </button>
+            </Link>
           </div>
         </div>
       </div>

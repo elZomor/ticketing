@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import ClerkAccount from '../clerkAccount/ClerkAccount.tsx';
+import { Link } from 'react-router-dom';
 
 function Header() {
   const { t, i18n } = useTranslation();
@@ -18,28 +19,29 @@ function Header() {
       >
         <div className="p-4">
           <div className="font-extrabold tracking-widest text-xl cursor-pointer">
-            {t('EG Theater')}
-            <a
-              href="#"
+            <Link
+              to="/"
               className="transition duration-500 hover:text-indigo-500 "
-            ></a>
+            >
+              {t('EG Theater')}
+            </Link>
           </div>
         </div>
         <div className="p-4 hidden md:flex flex-row justify-between font-bold">
-          <a
+          <Link
+            to="/about"
             id="hide-after-click"
-            href="#about"
-            className="mx-4 text-lg  border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
+            className="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
           >
             {t('ABOUT')}
-          </a>
-          <a
+          </Link>
+          <Link
+            to="/theater-scripts"
             id="hide-after-click"
-            href="#about"
-            className="mx-4 text-lg  border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
+            className="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
           >
             {t('THEATER_SCRIPTS')}
-          </a>
+          </Link>
           <ClerkAccount />
           <a
             onClick={handleLanguageChange}
