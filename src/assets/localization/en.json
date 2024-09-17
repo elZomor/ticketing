@@ -6,5 +6,8 @@
   "LOGOUT": "Log out",
   "THEATER_SCRIPTS": "Theater Scripts",
   "ABOUT": "About us",
+  "NOT_FOUND_HEADER": "Oops! Page Not Found",
+  "NOT_FOUND_BODY": "The page you're looking for seems to have gone on a little adventure. Don't worry, we'll help you find your way back home.\n\n",
+  "BACK_HOME": "Go Back Home",
   "OTHER_LANGUAGE": "العربية"
 }

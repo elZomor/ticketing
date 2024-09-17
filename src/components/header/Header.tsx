@@ -36,6 +36,13 @@ function Header() {
             {t('ABOUT')}
           </Link>
           <Link
+            to="/shows"
+            id="hide-after-click"
+            className="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"
+          >
+            {t('SHOWS')}
+          </Link>
+          <Link
             to="/theater-scripts"
             id="hide-after-click"
             className="mx-4 text-lg border-b-2 border-transparent hover:border-b-2 hover:border-indigo-300 transition duration-500"

@@ -4,8 +4,6 @@ import { ClerkProvider } from '@clerk/clerk-react';
 import App from '../../App.tsx';
 import './root.css';
 import { useEffect } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Home from '../Home/Home.tsx';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -31,12 +29,6 @@ export default function Root() {
       afterSignOutUrl="/"
     >
       <App />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<Home />} />
-        <Route path="/theater-scripts" element={<Home />} />
-        <Route path="*" element={<Home />} />
-      </Routes>
     </ClerkProvider>
   );
 }
