@@ -21,7 +21,6 @@ const Card = ({ data }: { data: ShowModel }) => {
   const logo = poster
     ? poster
     : 'https://cdn.pixabay.com/photo/2019/11/07/20/48/cinema-4609877_1280.jpg';
-  console.log(logo);
   const handleButtonClick = (url: string, newTab: boolean) => {
     if (newTab) {
       window.open(url, '_blank'); // Open in new tab
@@ -34,7 +33,8 @@ const Card = ({ data }: { data: ShowModel }) => {
     <div className="mt-5 md:flex bg-white bg-opacity-70">
       <div className="md:flex-shrink-0">
         <img
-          className="h-48 w-full object-cover md:w-48"
+          className="h-full w-full object-cover md:w-48 cursor-pointer"
+          onClick={() => handleButtonClick(logo, false)}
           src={logo}
           alt="logo"
         />
