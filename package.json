@@ -6,12 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
-    "prettier:format": "prettier --write 'src/**/*.{ts,tsx,html,js,json}' '*.ts' '*.html' '*.js' '*.json'",
+    "format": "prettier --write 'src/**/*.{ts,tsx,html,js,json}' '*.ts' '*.html' '*.js' '*.json'",
     "prettier:check": "prettier --check 'src/**/*.{ts,tsx,html,js,json}' '*.ts' '*.html' '*.js' '*.json'",
     "eslint:check": "eslint --no-fix",
-    "eslint": "eslint ./src/ --fix"
+    "lint": "eslint ./src/ --fix"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.8.2",
