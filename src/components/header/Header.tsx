@@ -15,7 +15,8 @@ function Header() {
     <>
       <nav
         id="nav"
-        className="fixed inset-x-0 top-0 flex flex-row justify-between z-30 text-white bg-transparent"
+        className="bg-black
+        fixed inset-x-0 top-0 flex flex-row justify-between z-50 text-white shadow-lg h-16"
       >
         <div className="p-4">
           <div className="font-extrabold tracking-widest text-xl cursor-pointer">

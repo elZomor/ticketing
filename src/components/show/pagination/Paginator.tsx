@@ -21,7 +21,7 @@ const Paginator = ({
   };
 
   return (
-    <div className="mt-5 max-w-2xl mx-auto">
+    <div className="mt-5 max-w-2xl mx-auto overflow-hidden mb-5">
       <nav aria-label="Page navigation example">
         <ul className="inline-flex -space-x-px">
           <li>

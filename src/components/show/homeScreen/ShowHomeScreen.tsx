@@ -1,7 +1,6 @@
 import Card from '../card/Card.tsx';
 import { useEffect, useState } from 'react';
 import { ShowModel } from '../models/ShowViewAllModel.ts';
-import seats12 from '../../../assets/images/seats12.avif';
 import { SHOWS_URL } from '../URLs.ts';
 import Paginator from '../pagination/Paginator.tsx';
 import { PaginatorModel } from '../models/PaginatorModel.ts';
@@ -34,18 +33,13 @@ const ShowHomeScreen = () => {
   }, []);
 
   return (
-    <div
-      className="w-screen h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${seats12})` }}
-    >
-      <div>
-        {dataList.map((dataItem) => (
-          <Card key={dataItem.id} data={dataItem} />
-        ))}
-        {paginatorData ? (
-          <Paginator data={paginatorData} onPageChange={fetchData} />
-        ) : null}
-      </div>
+    <div className="z-40">
+      {dataList.map((dataItem) => (
+        <Card key={dataItem.id} data={dataItem} />
+      ))}
+      {paginatorData ? (
+        <Paginator data={paginatorData} onPageChange={fetchData} />
+      ) : null}
     </div>
   );
 };
