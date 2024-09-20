@@ -3,9 +3,23 @@ import { useTranslation } from 'react-i18next';
 
 const Card = ({ data }: { data: ShowModel }) => {
   const { t } = useTranslation();
+  const {
+    poster,
+    name,
+    cast_name,
+    show_date,
+    show_time,
+    theater_name,
+    theater_id,
+    author,
+    director,
+    link,
+    id,
+    booking_available,
+  } = data;
   const currentDomain = window.location.origin;
-  const logo = data.poster
-    ? data.poster
+  const logo = poster
+    ? poster
     : 'https://cdn.pixabay.com/photo/2019/11/07/20/48/cinema-4609877_1280.jpg';
   console.log(logo);
   const handleButtonClick = (url: string, newTab: boolean) => {
@@ -27,30 +41,30 @@ const Card = ({ data }: { data: ShowModel }) => {
       </div>
       <div className="p-8">
         <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
-          {data.name.ar} - {data.cast_name}
+          {name.ar} - {cast_name}
         </div>
         <p className="block mt-1 text-lg leading-tight font-medium text-black">
-          {data.show_date} - {data.show_time}
+          {show_date} - {show_time}
         </p>
         <p className="block mt-1 text-lg leading-tight font-normal italic text-black">
           <a
             href="#"
             onClick={() =>
               handleButtonClick(
-                `${currentDomain}/theaters/${data.theater_id}`,
+                `${currentDomain}/theaters/${theater_id}`,
                 false
               )
             }
             className="text-black hover:text-blue-600 hover:underline"
           >
-            {data.theater_name}
+            {theater_name}
           </a>
         </p>
         <p className="mt-2 text-black-500">
-          {t('AUTHOR')}: {data.author}
+          {t('AUTHOR')}: {author}
         </p>
         <p className="mt-2 text-black-500">
-          {t('DIRECTOR')}: {data.director}
+          {t('DIRECTOR')}: {director}
         </p>
         <button className="mt-5 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
           {t('BOOK_SHOW')}
@@ -58,15 +72,15 @@ const Card = ({ data }: { data: ShowModel }) => {
         <button
           className="mt-5 ml-3 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-cyan-600 hover:bg-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           onClick={() =>
-            handleButtonClick(`${currentDomain}/shows/${data.id}`, false)
+            handleButtonClick(`${currentDomain}/shows/${id}`, false)
           }
-          disabled={!data.booking_available}
+          disabled={!booking_available}
         >
           {t('SHOW_DETAILS')}
         </button>
         <button
           className="mt-5 ml-3 px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-          onClick={() => handleButtonClick(data.link, true)}
+          onClick={() => handleButtonClick(link, true)}
         >
           {t('FACEBOOK_EVENT')}
         </button>
