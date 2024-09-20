@@ -9,5 +9,13 @@
   "NOT_FOUND_HEADER": "هذه الصفحة غير موجودة!",
   "NOT_FOUND_BODY": "الصفحة التي تبحث عنها غير موجودة. الرجاء الذهاب للصفحة الرئيسية.",
   "BACK_HOME": "عودة للصفحة الرئيسية",
+  "AUTHOR": "تأليف",
+  "DIRECTOR": "إخراج",
+  "BOOK_SHOW": "حجز",
+  "SHOW_DETAILS": "عرض التفاصيل",
+  "FACEBOOK_EVENT": "فيسبوك",
+  "PREVIOUS": "السابق",
+  "NEXT": "التالي",
+  "SOON": "قريباً!",
   "OTHER_LANGUAGE": "English"
 }
