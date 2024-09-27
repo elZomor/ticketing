@@ -37,32 +37,33 @@ export const App = () => {
         publishableKey={PUBLISHABLE_KEY}
         afterSignOutUrl="/"
       >
-        <div className="w-screen h-screen relative before:block before:absolute before:bg-black before:h-full before:w-full before:top-0 before:left-0 before:z-10 before:opacity-30">
+        <div className="w-screen h-screen relative -z-[-1]">
           <img
             src={seats12}
             className="absolute top-0 left-0 w-full h-full object-cover"
             alt=""
           />
           <Header />
-          <div className="h-full w-full overflow-y-scroll pt-16">
-            <div className="h-full w-full flex-1 flex items-center justify-center bg-cover bg-center bg-no-repeat">
-              <Routes>
-                {Object.entries(routes).map((route) => (
-                  <Route
-                    key={route[1].path}
-                    path={route[1].path}
-                    element={
-                      route[1].public ? (
-                        <PublicRoute component={route[1].component} />
-                      ) : (
-                        <PrivateRoute component={route[1].component} />
-                      )
-                    }
-                  />
-                ))}
-                <Route path="*" element={<NotFound />} />
-              </Routes>
-            </div>
+          <div
+            className="pt-16 overflow-y-scroll h-full w-full flex-1 flex items-center justify-center 
+            bg-cover bg-center bg-no-repeat"
+          >
+            <Routes>
+              {Object.entries(routes).map((route) => (
+                <Route
+                  key={route[1].path}
+                  path={route[1].path}
+                  element={
+                    route[1].public ? (
+                      <PublicRoute component={route[1].component} />
+                    ) : (
+                      <PrivateRoute component={route[1].component} />
+                    )
+                  }
+                />
+              ))}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </div>
         </div>
       </ClerkProvider>
