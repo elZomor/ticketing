@@ -1,8 +1,8 @@
-import { useTranslation } from 'react-i18next';
 import { SignedOut, useClerk } from '@clerk/clerk-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
-export default function Home() {
+const Home = () => {
   const { t } = useTranslation();
   const clerk = useClerk();
 
@@ -39,4 +39,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default Home;

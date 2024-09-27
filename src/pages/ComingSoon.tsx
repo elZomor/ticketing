@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-const ComingSoon = () => {
+export const ComingSoon = () => {
   const { t } = useTranslation();
   return (
     <div className="w-full h-full flex items-center justify-center bg-cover bg-center bg-no-repeat relative z-40">
@@ -21,5 +21,3 @@ const ComingSoon = () => {
     </div>
   );
 };
-
-export default ComingSoon;
