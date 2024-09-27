@@ -1,4 +1,4 @@
-import { PaginatorModel } from '../models/PaginatorModel.ts';
+import { PaginatorModel } from '../../model/PaginatorModel.ts';
 import { useTranslation } from 'react-i18next';
 import React from 'react';
 
