@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { ShowModel } from '@model';
+import { ShowModel } from '../../model';
 import { PaginatorModel } from '../../model';
 import Card from '../../components/card/Card.tsx';
 import Paginator from '../../components/pagination/Paginator.tsx';
