@@ -1,18 +1,18 @@
-import Card from '../card/Card.tsx';
 import { useEffect, useState } from 'react';
-import { ShowModel } from '../models/ShowViewAllModel.ts';
-import { SHOWS_URL } from '../URLs.ts';
-import Paginator from '../pagination/Paginator.tsx';
-import { PaginatorModel } from '../models/PaginatorModel.ts';
+import { ShowModel } from '@model';
+import { PaginatorModel } from '../../model';
+import Card from '../../components/card/Card.tsx';
+import Paginator from '../../components/pagination/Paginator.tsx';
+import { BASE_URL } from '../../constants/constants.ts';
 
-const ShowHomeScreen = () => {
+export const ViewAllScreen = () => {
   const [dataList, setDataList] = useState<ShowModel[]>([]);
   const [paginatorData, setPaginatorData] = useState<
     PaginatorModel | undefined
   >(undefined);
   const fetchData = (pageNumber: number) => {
     try {
-      fetch(`${SHOWS_URL}?page=${pageNumber}`)
+      fetch(`${BASE_URL}/shows?page=${pageNumber}`)
         .then((result) => result.json())
         .then((json) => {
           setDataList(json['results']);
@@ -43,5 +43,3 @@ const ShowHomeScreen = () => {
     </div>
   );
 };
-
-export default ShowHomeScreen;
