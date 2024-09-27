@@ -1,6 +1,6 @@
 export const AboutUs = () => {
   return (
-    <div className="md:flex-row flex gap-3 flex-col justify-center items-center h-full w-full ">
+    <div className="md:flex-row flex gap-3 flex-col justify-center items-center h-full w-full z-10">
       <div className="p-10 flex-1">
         <div className="image object-center text-center">
           <img src="https://i.imgur.com/WbQnbas.png" />

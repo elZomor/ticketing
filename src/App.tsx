@@ -37,7 +37,7 @@ export const App = () => {
         publishableKey={PUBLISHABLE_KEY}
         afterSignOutUrl="/"
       >
-        <div className="w-screen h-screen relative -z-[-1]">
+        <div className="w-screen h-screen relative z-[-1]">
           <img
             src={seats12}
             className="absolute top-0 left-0 w-full h-full object-cover"
