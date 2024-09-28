@@ -81,7 +81,6 @@ function NavBar() {
             <a
               onClick={() => {
                 handleLanguageChange();
-                toggleMenu();
               }}
               className="hamburger-button"
             >
