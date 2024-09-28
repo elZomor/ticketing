@@ -22,4 +22,5 @@ export default interface IRoutes {
   theaters: IRoute;
   // theaterDetails: IDynamicRoute,
   theaterDetails: IRoute;
+  podcasts: IRoute;
 }
