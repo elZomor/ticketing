@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 function NotFound() {
   const { t } = useTranslation();
   return (
-    <div className="md:flex-row flex gap-3 flex-col justify-center items-center h-full w-full">
-      <div className="text-9xl font-bold text-indigo-600 mb-4">404</div>
-      <h1 className="text-4xl font-bold text-gray-800 mb-6">
+    <div className="flex gap-3 flex-col justify-center items-center h-full w-full z-10 bg-amber-50 bg-opacity-70">
+      <div className="text-4xl md:text-9xl font-bold text-indigo-600 mb-4">
+        404
+      </div>
+      <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-6">
         {t('NOT_FOUND_HEADER')}
       </h1>
       <p className="text-lg text-gray-600 mb-8">{t('NOT_FOUND_BODY')}</p>

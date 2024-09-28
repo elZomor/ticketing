@@ -1,40 +1,43 @@
 import { SignedOut, useClerk } from '@clerk/clerk-react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 export const Home = () => {
   const { t } = useTranslation();
   const clerk = useClerk();
+  const navigate = useNavigate();
+
+  const handleClick = () => navigate('/shows');
 
   return (
-    <div className="w-screen h-screen overflow-hidden relative before:block before:absolute before:bg-black before:h-full before:w-full before:top-0 before:left-0 before:z-10 before:opacity-30">
-      <div className="relative z-20 max-w-screen-lg mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-12 h-full items-center">
-        <div className="col-span-12 md:col-span-6 text-center md:text-left">
-          <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-8">
-            {t('EG Theater')}
-          </h1>
+    <div className="relative z-10 grid grid-cols-12 h-full items-center">
+      <div className="col-span-12 md:col-span-6 text-center md:text-left">
+        <h1 className="text-white font-extrabold text-3xl sm:text-4xl lg:text-5xl mb-6 sm:mb-8">
+          {t('EG Theater')}
+        </h1>
 
-          <p className="text-stone-100 text-sm sm:text-base font-bold italic">
-            {t('SLOGAN')}
-          </p>
+        <p className="text-stone-100 text-sm sm:text-base font-bold italic">
+          {t('SLOGAN')}
+        </p>
 
-          <div className="mt-6 sm:mt-8">
-            <SignedOut>
-              <button
-                onClick={() => clerk.openSignIn()}
-                className="w-full md:w-auto mt-4 md:mt-0 text-white uppercase py-3 text-sm sm:text-base font-light px-8 border border-white hover:bg-white hover:bg-opacity-10"
-              >
-                {t('LOGIN')}
-              </button>
-            </SignedOut>
-            <Link
-              to="/shows"
-              id="hide-after-click"
-              className="w-full md:w-auto mt-4 md:mt-0 text-white uppercase py-3 text-sm sm:text-base font-light px-8 border border-white hover:bg-white hover:bg-opacity-10 mx-0 md:mx-3"
+        <div className="m-8 flex md:flex-row flex-col">
+          <SignedOut>
+            <button
+              onClick={() => clerk.openSignIn()}
+              className="w-full md:w-auto mt-4 md:mt-0 md:m[8px] text-white uppercase py-3 text-sm
+              sm:text-base font-light px-8 border border-white hover:bg-white hover:bg-opacity-10"
             >
-              {t('SHOWS')}
-            </Link>
-          </div>
+              {t('LOGIN')}
+            </button>
+          </SignedOut>
+          <button
+            id="hide-after-click"
+            onClick={handleClick}
+            className="w-full md:w-auto mt-4 md:mt-0 text-white uppercase py-3 text-sm
+              sm:text-base font-light px-8 border border-white hover:bg-white hover:bg-opacity-10"
+          >
+            {t('SHOWS')}
+          </button>
         </div>
       </div>
     </div>
