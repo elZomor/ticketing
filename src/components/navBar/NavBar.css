@@ -1,0 +1,6 @@
+.navbar-button {
+    @apply mx-4 text-lg border-b-2 border-transparent hover:border-indigo-300 transition duration-500 cursor-pointer;
+}
+.hamburger-button {
+    @apply text-lg border-b-2 border-transparent hover:border-indigo-300 transition duration-500;
+}

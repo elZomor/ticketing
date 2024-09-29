@@ -55,4 +55,9 @@ export const routes: IRoutes = {
     public: true,
     component: buildImport('ComingSoon'),
   },
+  podcasts: {
+    path: '/podcasts',
+    public: true,
+    component: buildImport('ComingSoon'),
+  },
 };
