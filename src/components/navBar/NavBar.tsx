@@ -4,54 +4,41 @@ import { useState } from 'react';
 import { NavBarButton } from './NavBarButton.tsx';
 import { HamburgerMenuButton } from './HamburgerMenuButton.tsx';
 import './NavBar.css';
+import { LanguageSwitcher } from './LanguageSwitcher.tsx';
+import { HamburgerMenuIcon } from './HamburgerMenuIcon.tsx';
 
 function NavBar() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLanguageChange = async () => {
-    const currentLanguage = i18n.language;
-    const newLanguage = currentLanguage === 'en' ? 'ar' : 'en';
-    await i18n.changeLanguage(newLanguage);
-    localStorage.setItem('language', newLanguage);
-  };
   return (
     <>
       <nav
         id="nav"
-        className="bg-black
-        fixed inset-x-0 top-0 flex flex-row justify-between z-50 text-white shadow-lg h-16"
+        className="bg-darkRed bg-opacity-60
+        fixed inset-x-0 top-0 flex flex-row justify-between z-50 text-gold shadow-lg h-16"
       >
         <div className="p-4 md:hidden flex items-center">
-          <button onClick={toggleMenu} className="focus:outline-none">
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
-          </button>
+          <HamburgerMenuIcon toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
         </div>
+        <div className="p-4 md:hidden flex">
+          <LanguageSwitcher />
+        </div>
+
         <section className="p-4 hidden md:flex flex-row justify-between font-bold">
-          <NavBarButton to="/about" text={t('ABOUT')} />
+          <ClerkAccount />
           <NavBarButton to="/shows" text={t('SHOWS')} />
           <NavBarButton to="/theater-scripts" text={t('THEATER_SCRIPTS')} />
           <NavBarButton to="/podcasts" text={t('PODCASTS')} />
+          <NavBarButton to="/about" text={t('ABOUT')} />
         </section>
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 w-full bg-black p-4 flex flex-col space-y-4 font-bold">
+          <div className="md:hidden absolute top-16 left-0 w-full bg-darkRed bg-opacity-60 p-4 flex flex-col space-y-4 font-bold">
+            <ClerkAccount />
             <HamburgerMenuButton
               to="/"
               onClickFn={toggleMenu}
@@ -77,23 +64,10 @@ function NavBar() {
               onClickFn={toggleMenu}
               text={t('ABOUT')}
             />
-            <ClerkAccount />
-            <a
-              onClick={() => {
-                handleLanguageChange();
-              }}
-              className="hamburger-button"
-            >
-              {t('OTHER_LANGUAGE')}
-            </a>
           </div>
         )}
-        <section className="p-4 hidden md:flex font-extrabold tracking-widest text-xl cursor-pointer">
-          <NavBarButton to="/" text={t('EG Theater')} />
-          <ClerkAccount />
-          <a onClick={handleLanguageChange} className="navbar-button">
-            {t('OTHER_LANGUAGE')}
-          </a>
+        <section className="p-4 hidden md:flex">
+          <LanguageSwitcher />
         </section>
       </nav>
     </>
