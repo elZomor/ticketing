@@ -13,14 +13,17 @@ if (!PUBLISHABLE_KEY) {
 
 export default function Root() {
   const { i18n } = useTranslation();
-  const localization = i18n.language === 'ar' ? arSA : enUS; // Expand this based on supported languages
+  const localization = i18n.language === 'ar' ? arSA : enUS;
 
   useEffect(() => {
     const savedLanguage = localStorage.getItem('language');
     if (savedLanguage) {
-      i18n.changeLanguage(savedLanguage); // Set language from storage
+      i18n.changeLanguage(savedLanguage);
     }
   }, [i18n]);
+  document
+    .getElementsByTagName('html')[0]
+    .setAttribute('dir', i18n.language === 'ar' ? 'rtl' : 'ltr');
 
   return (
     <ClerkProvider
