@@ -1,4 +1,4 @@
-import { ShowModel } from '../models/ShowViewAllModel.ts';
+import { ShowModel } from '../../model/ShowViewAllModel.ts';
 import { useTranslation } from 'react-i18next';
 
 const Card = ({ data }: { data: ShowModel }) => {
