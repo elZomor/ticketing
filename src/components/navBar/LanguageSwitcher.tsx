@@ -33,7 +33,7 @@ export const LanguageSwitcher: React.FC = () => {
   }, [ref]);
 
   return (
-    <div className="relative" ref={ref}>
+    <div className="relative p-4" ref={ref}>
       {' '}
       <div
         className="cursor-pointer text-xl md:text-2xl"
@@ -43,7 +43,7 @@ export const LanguageSwitcher: React.FC = () => {
       </div>
       {isOpen && (
         <ul
-          className={`absolute ${currentLanguage === 'ar' ? 'left-0' : 'right-0'} mt-5 w-16 bg-primaryColor bg-opacity-60
+          className={`absolute ${currentLanguage === 'ar' ? 'left-0' : 'right-0'} mt-5 w-16 bg-primaryColor bg-opacity-85
          rounded shadow-lg z-10`}
         >
           {languages.map((lang) => (

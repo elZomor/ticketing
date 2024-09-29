@@ -18,7 +18,7 @@ export const routes: IRoutes = {
   about: {
     path: '/about',
     public: true,
-    component: buildImport('AboutUs'),
+    component: buildImport('ComingSoon'),
   },
   home: {
     path: '/',

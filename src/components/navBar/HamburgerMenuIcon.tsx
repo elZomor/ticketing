@@ -7,7 +7,7 @@ export const HamburgerMenuIcon: FC<HamburgerMenuIconProps> = ({
   isMenuOpen,
 }) => {
   return (
-    <button className="relative group" onClick={toggleMenu}>
+    <button className="relative group p-4" onClick={toggleMenu}>
       <div
         className={`relative flex overflow-hidden items-center justify-center rounded-full w-12 h-12
           transform transition-all bg-primaryColor bg-opacity-80`}

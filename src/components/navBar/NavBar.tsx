@@ -21,11 +21,14 @@ function NavBar() {
       <nav
         id="nav"
         className="bg-primaryColor bg-opacity-85
-        fixed inset-x-0 top-0 flex flex-row justify-between z-50 text-gold shadow-lg h-16"
+        fixed inset-x-0 top-0 flex flex-row justify-between z-50 text-gold h-16"
       >
-        <div className="p-4 md:hidden flex items-center flex-row justify-between w-full overflow-hidden">
+        <div className="md:hidden flex items-center flex-row justify-between w-full h-16">
           <HamburgerMenuIcon toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-          <Link to="/" className="relative flex items-center justify-center ">
+          <Link
+            to="/"
+            className="relative flex items-center justify-center h-16 overflow-hidden"
+          >
             <img
               src={logo}
               alt="Logo"
@@ -67,12 +70,15 @@ function NavBar() {
             />
           </div>
         )}
-        <section className="p-4 hidden md:flex flex-row overflow-hidden">
-          <Link to="/" className="relative flex items-center justify-center ">
+        <section className=" hidden md:flex flex-row h-16">
+          <Link
+            to="/"
+            className="relative flex items-center justify-center h-16 overflow-hidden"
+          >
             <img
               src={logo}
               alt="Logo"
-              className=" cursor-pointer h-30 w-40 object-contain"
+              className=" cursor-pointer max-h-30 w-40 object-contain"
             />
           </Link>
 
