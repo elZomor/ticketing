@@ -6,7 +6,8 @@ import { HamburgerMenuButton } from './HamburgerMenuButton.tsx';
 import './NavBar.css';
 import { LanguageSwitcher } from './LanguageSwitcher.tsx';
 import { HamburgerMenuIcon } from './HamburgerMenuIcon.tsx';
-
+import { Link } from 'react-router-dom';
+import logo from '../../assets/images/logo.png';
 function NavBar() {
   const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,10 +23,15 @@ function NavBar() {
         className="bg-primaryColor bg-opacity-85
         fixed inset-x-0 top-0 flex flex-row justify-between z-50 text-gold shadow-lg h-16"
       >
-        <div className="p-4 md:hidden flex items-center">
+        <div className="p-4 md:hidden flex items-center flex-row justify-between w-full overflow-hidden">
           <HamburgerMenuIcon toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-        </div>
-        <div className="p-4 md:hidden flex">
+          <Link to="/" className="relative flex items-center justify-center ">
+            <img
+              src={logo}
+              alt="Logo"
+              className=" cursor-pointer h-30 w-40 object-contain"
+            />
+          </Link>
           <LanguageSwitcher />
         </div>
 
@@ -37,13 +43,8 @@ function NavBar() {
           <NavBarButton to="/about" text={t('ABOUT')} />
         </section>
         {isMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 w-full bg-darkRed bg-opacity-60 p-4 flex flex-col space-y-4 font-bold">
+          <div className="md:hidden absolute top-16 left-0 w-full bg-primaryColor bg-opacity-85 p-4 flex flex-col space-y-4 font-bold">
             <ClerkAccount />
-            <HamburgerMenuButton
-              to="/"
-              onClickFn={toggleMenu}
-              text={t('HOME')}
-            />
             <HamburgerMenuButton
               to="/shows"
               onClickFn={toggleMenu}
@@ -66,7 +67,15 @@ function NavBar() {
             />
           </div>
         )}
-        <section className="p-4 hidden md:flex">
+        <section className="p-4 hidden md:flex flex-row overflow-hidden">
+          <Link to="/" className="relative flex items-center justify-center ">
+            <img
+              src={logo}
+              alt="Logo"
+              className=" cursor-pointer h-30 w-40 object-contain"
+            />
+          </Link>
+
           <LanguageSwitcher />
         </section>
       </nav>
