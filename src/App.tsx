@@ -1,6 +1,5 @@
 import NavBar from './components/navBar/NavBar.tsx';
 import { Route, Routes } from 'react-router-dom';
-import seats12 from './assets/images/seats12.avif';
 import { useTranslation } from 'react-i18next';
 import { arSA, enUS } from '@clerk/localizations';
 import { Suspense, useEffect } from 'react';
@@ -38,11 +37,6 @@ export const App = () => {
         afterSignOutUrl="/"
       >
         <div className="w-screen h-screen relative -z-[-1]">
-          <img
-            src={seats12}
-            className="absolute top-0 left-0 w-full h-full object-cover"
-            alt=""
-          />
           <NavBar />
           <div
             className="pt-16 h-full w-full flex-1 flex items-center justify-center
