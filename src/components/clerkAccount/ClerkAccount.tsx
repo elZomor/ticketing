@@ -12,7 +12,7 @@ function ClerkAccount() {
     await clerk.signOut();
   };
   return (
-    <>
+    <div className="pt-4">
       <SignedOut>
         <a
           onClick={handleLogin}
@@ -29,7 +29,7 @@ function ClerkAccount() {
           {t('LOGOUT')}
         </a>
       </SignedIn>
-    </>
+    </div>
   );
 }
 

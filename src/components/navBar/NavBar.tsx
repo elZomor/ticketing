@@ -38,7 +38,17 @@ function NavBar() {
           <LanguageSwitcher />
         </div>
 
-        <section className="p-4 hidden md:flex flex-row justify-between font-bold">
+        <section className=" hidden md:flex flex-row justify-between font-bold">
+          <Link
+            to="/"
+            className="relative flex items-center justify-center h-16 overflow-hidden"
+          >
+            <img
+              src={logo}
+              alt="Logo"
+              className=" cursor-pointer max-h-30 w-40 object-contain"
+            />
+          </Link>
           <ClerkAccount />
           <NavBarButton to="/shows" text={t('SHOWS')} />
           <NavBarButton to="/theater-scripts" text={t('THEATER_SCRIPTS')} />
@@ -71,17 +81,6 @@ function NavBar() {
           </div>
         )}
         <section className=" hidden md:flex flex-row h-16">
-          <Link
-            to="/"
-            className="relative flex items-center justify-center h-16 overflow-hidden"
-          >
-            <img
-              src={logo}
-              alt="Logo"
-              className=" cursor-pointer max-h-30 w-40 object-contain"
-            />
-          </Link>
-
           <LanguageSwitcher />
         </section>
       </nav>

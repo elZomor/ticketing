@@ -5,7 +5,7 @@ type NavBarButtonProps = { to: string; text: string };
 
 export const NavBarButton: FC<NavBarButtonProps> = ({ to, text }) => {
   return (
-    <Link to={to} className="navbar-button">
+    <Link to={to} className="pt-4 navbar-button">
       {text}
     </Link>
   );
