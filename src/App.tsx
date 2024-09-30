@@ -36,12 +36,9 @@ export const App = () => {
         publishableKey={PUBLISHABLE_KEY}
         afterSignOutUrl="/"
       >
-        <div className="w-screen h-screen relative -z-[-1]">
+        <div className="w-screen h-full relative flex flex-col">
           <NavBar />
-          <div
-            className="pt-16 h-full w-full flex-1 flex items-center justify-center
-            bg-cover bg-center bg-no-repeat"
-          >
+          <div className="mt-16">
             <Routes>
               {Object.entries(routes).map((route) => (
                 <Route

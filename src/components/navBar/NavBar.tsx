@@ -20,7 +20,7 @@ function NavBar() {
     <>
       <nav
         id="nav"
-        className="bg-primaryColor bg-opacity-85
+        className="bg-black
         fixed inset-x-0 top-0 flex flex-row justify-between z-50 text-gold h-16"
       >
         <div className="md:hidden flex items-center flex-row justify-between w-full h-16">
