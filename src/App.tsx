@@ -8,6 +8,7 @@ import { routes } from './routes';
 import { PublicRoute } from './routes/PublicRoute.tsx';
 import { PrivateRoute } from './routes/PrivateRoute.tsx';
 import NotFound from './pages/NotFound.tsx';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
@@ -36,12 +37,9 @@ export const App = () => {
         publishableKey={PUBLISHABLE_KEY}
         afterSignOutUrl="/"
       >
-        <div className="w-screen h-screen relative -z-[-1]">
+        <div className="w-screen h-full relative flex flex-col">
           <NavBar />
-          <div
-            className="pt-16 h-full w-full flex-1 flex items-center justify-center
-            bg-cover bg-center bg-no-repeat"
-          >
+          <div className="mt-16">
             <Routes>
               {Object.entries(routes).map((route) => (
                 <Route

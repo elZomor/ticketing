@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { ShowModel } from '../../model';
 import { PaginatorModel } from '../../model';
-import Card from '../../components/card/Card.tsx';
+import Card from '../../components/home/Card.tsx';
 import Paginator from '../../components/pagination/Paginator.tsx';
 import { BASE_URL } from '../../constants/constants.ts';
 
