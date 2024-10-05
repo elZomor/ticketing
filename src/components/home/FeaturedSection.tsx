@@ -72,7 +72,7 @@ export const FeaturedSection = () => {
           ))}
       </div>
       <button
-        className="px-2 py-1 mt-3 border border-transparent text-lg font-bold rounded-md
+        className="px-2 py-1 my-3 border border-transparent text-lg font-bold rounded-md
             text-gold bg-black w-3/4 mx-auto md:hidden"
         onClick={() => handleButtonClick(`${currentDomain}/shows`)}
       >

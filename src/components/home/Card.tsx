@@ -47,8 +47,8 @@ const Card = ({ data }: { data: ShowModel }) => {
       >
         <div
           className={`${
-            inDetailMode ? 'block' : 'hidden'
-          } flex items-center justify-center bg-black bg-opacity-80 mt-8 md:w-full`}
+            inDetailMode ? 'md:block' : 'md:hidden'
+          } hidden md:flex items-center justify-center bg-black bg-opacity-80 mt-8 md:w-full`}
         >
           <div>
             <div className="uppercase tracking-wide text-2xl text-accentColor font-semibold">
@@ -143,12 +143,14 @@ const Card = ({ data }: { data: ShowModel }) => {
               {t('SHOW_DETAILS')}
             </button>
             <button
-              className="px-2 py-1 mt-3 border border-transparent text-sm font-medium rounded-md 
-            text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 
-            focus:ring-red-500"
+              className="mt-3 border border-transparent rounded-md
+            text-white bg-blue-600"
               onClick={() => handleButtonClick(link, true)}
             >
-              {t('FACEBOOK_EVENT')}
+              <i
+                onClick={() => handleButtonClick(link, true)}
+                className="fab fa-facebook w-5 h-5"
+              ></i>
             </button>
           </div>
         </div>

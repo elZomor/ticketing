@@ -8,6 +8,7 @@ import { routes } from './routes';
 import { PublicRoute } from './routes/PublicRoute.tsx';
 import { PrivateRoute } from './routes/PrivateRoute.tsx';
 import NotFound from './pages/NotFound.tsx';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
