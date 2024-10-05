@@ -21,5 +21,5 @@ export interface ShowModel {
   poster: string;
   author: string;
   director: string;
-  tags: TagModel[];
+  tags?: TagModel[];
 }

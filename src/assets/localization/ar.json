@@ -12,7 +12,7 @@
   "AUTHOR": "تأليف",
   "DIRECTOR": "إخراج",
   "BOOK_SHOW": "حجز",
-  "SHOW_DETAILS": "عرض التفاصيل",
+  "SHOW_DETAILS": "تفاصيل",
   "FACEBOOK_EVENT": "فيسبوك",
   "PREVIOUS": "السابق",
   "NEXT": "التالي",
@@ -22,5 +22,7 @@
   "HERO_TITLE": "مهرجان الفضاءات غير التقليدية",
   "HERO_SECTION": "متحمسون لهذا المهرجان غير التقليدي!",
   "DETAILS": "التفاصيل",
+  "FEATURED_EVENTS": "المسرحيات القادمة",
+  "MORE_EVENTS": "المزيد من المسرحيات",
   "OTHER_LANGUAGE": "English"
 }

@@ -9,7 +9,7 @@ export const HeroSection = () => {
       <div
         className="flex flex-col md:flex-row p-6 md:p-8 w-full bg-cover
         bg-center bg-no-repeat  items-center justify-between md:h-96 bg-accentColor
-     bg-opacity-70 shadow-xl"
+     bg-opacity-70 shadow-xl md:relative"
         style={{ backgroundImage: `url(${hero})` }}
       >
         <div className="h-full flex flex-col items-center justify-end md:w-1/2">
