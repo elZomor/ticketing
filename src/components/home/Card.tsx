@@ -2,7 +2,7 @@ import { ShowModel } from '../../model/ShowViewAllModel.ts';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 
-export const Card = ({ data }: { data: ShowModel }) => {
+const Card = ({ data }: { data: ShowModel }) => {
   const { t } = useTranslation();
   const [inDetailMode, setInDetailMode] = useState(false);
 
@@ -156,3 +156,5 @@ export const Card = ({ data }: { data: ShowModel }) => {
     </div>
   );
 };
+
+export default Card;

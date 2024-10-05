@@ -1,7 +1,7 @@
 import { dataList } from './utils.ts';
 import { useState } from 'react';
-import { Card } from './Card.tsx';
 import { useTranslation } from 'react-i18next';
+import Card from './Card.tsx';
 
 export const FeaturedSection = () => {
   const [startIndex, setStartIndex] = useState(0);
